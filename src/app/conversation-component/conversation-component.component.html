@@ -1,0 +1,14 @@
+
+<!-- <div #chatContainer class="chat-container scrollable conversation" #scrollContainer> -->
+  <div #chatContainer class="chat-container scrollable conversation">
+    <div *ngFor="let message of messages; let i = index" class="message" [ngClass]="{ 'client': message.sender === 'client', 'developer': message.sender === 'developer' }">
+      <div class="avatar">{{ message.sender.charAt(0).toUpperCase() }}</div>
+      <div class="content">{{ message.content }}</div>
+    </div>
+    <div *ngIf="isTyping" class="message typing">
+      <div class="avatar">👩‍💻</div>
+      <div class="content">Typing...</div>
+    </div>
+  </div>
+  
+  

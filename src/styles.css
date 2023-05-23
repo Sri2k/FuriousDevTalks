@@ -1,1 +1,231 @@
 /* You can add global styles to this file, and also import other style files */
+body {
+    background-color: #000;
+    font-family: Arial, sans-serif;
+    height: 100vh;
+    margin: 0;
+  }
+  
+  .app-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+  
+  .conversation {
+  max-height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 20px;
+  background-color: #000;
+  border-radius: 10px;
+  box-shadow: 8px 8px 16px rgba(0, 0, 0, 0.1), -8px -8px 16px rgba(255, 255, 255, 0.05);
+  max-width: 500px;
+  margin: 0 auto;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: var(--scrollbar-thumb-color) var(--scrollbar-track-color);
+}
+
+
+  
+  .message {
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 20px;
+    animation: slideIn 0.5s;
+    align-self: flex-start; /* Align messages to the left side */
+  }
+  
+  .message.developer {
+    justify-content: flex-end;
+    align-self: flex-end; /* Align developer messages to the right side */
+  }
+  
+  @keyframes slideIn {
+    from {
+      opacity: 0;
+      transform: translateX(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  .avatar {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    font-weight: bold;
+    font-size: 14px;
+    margin-right: 10px;
+    animation: pulse 1s infinite;
+    box-shadow: 8px 8px 16px rgba(0, 0, 0, 0.1), -8px -8px 16px rgba(255, 255, 255, 0.05);
+  }
+  
+  @keyframes pulse {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.2);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  
+  .client .avatar {
+    background-color: #03a9f4;
+    color: #fff;
+  }
+  
+  .developer .avatar {
+    background-color: #e91e63;
+    color: #fff;
+  }
+  
+  .content {
+    font-size: 16px;
+    line-height: 1.4;
+    background-color: #000;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.2), -4px -4px 8px rgba(255, 255, 255, 0.05);
+    animation: fadeInContent 1s;
+    max-width: 70%; /* Limit message width to avoid compression */
+    color: #fff;
+  }
+  
+  @keyframes fadeInContent {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  .typing .avatar {
+    background-color: #777;
+    color: #fff;
+  }
+  
+  .typing .content {
+    font-style: italic;
+  }
+  
+  .neon {
+    text-shadow: 0 0 5px #03a9f4, 0 0 10px #03a9f4, 0 0 20px #03a9f4, 0 0 30px #03a9f4, 0 0 40px #03a9f4, 0 0 55px #03a9f4, 0 0 75px #03a9f4;
+  }
+  
+  .developer .neon {
+    text-shadow: 0 0 5px #e91e63, 0 0 10px #e91e63, 0 0 20px #e91e63, 0 0 30px #e91e63, 0 0 40px #e91e63, 0 0 55px #e91e63, 0 0 75px #e91e63;
+  }
+  
+  
+  
+  /* Additional Artistic Effects */
+  
+  body {
+    background-color: #000;
+    overflow: hidden; /* Hide scrollbars on the body */
+  }
+  
+  .conversation {
+    background-color: #000;
+    box-shadow: none;
+    border-radius: 0;
+    overflow: hidden; /* Hide scrollbars on the conversation container */
+  }
+  
+  .message {
+    margin-bottom: 40px;
+  }
+  
+  .avatar {
+    font-size: 18px;
+    animation-duration: 1.5s;
+  }
+  
+  .content {
+    animation-duration: 1.5s;
+  }
+  
+  .message.client .content {
+    background-color: #03a9f4;
+  }
+  
+  .message.developer .content {
+    background-color: #e91e63;
+  }
+  
+  .message.client .avatar {
+    animation-name: neonPulseBlue;
+  }
+  
+  .message.developer .avatar {
+    animation-name: neonPulsePink;
+  }
+  
+  @keyframes neonPulseBlue {
+    0% {
+      color: #03a9f4;
+      text-shadow: 0 0 5px #03a9f4, 0 0 10px #03a9f4, 0 0 20px #03a9f4, 0 0 30px #03a9f4, 0 0 40px #03a9f4, 0 0 55px #03a9f4, 0 0 75px #03a9f4;
+    }
+    50% {
+      color: #fff;
+      text-shadow: none;
+    }
+    100% {
+      color: #03a9f4;
+      text-shadow: 0 0 5px #03a9f4, 0 0 10px #03a9f4, 0 0 20px #03a9f4, 0 0 30px #03a9f4, 0 0 40px #03a9f4, 0 0 55px #03a9f4, 0 0 75px #03a9f4;
+    }
+  }
+  
+  @keyframes neonPulsePink {
+    0% {
+      color: #e91e63;
+      text-shadow: 0 0 5px #e91e63, 0 0 10px #e91e63, 0 0 20px #e91e63, 0 0 30px #e91e63, 0 0 40px #e91e63, 0 0 55px #e91e63, 0 0 75px #e91e63;
+    }
+    50% {
+      color: #fff;
+      text-shadow: none;
+    }
+    100% {
+      color: #e91e63;
+      text-shadow: 0 0 5px #e91e63, 0 0 10px #e91e63, 0 0 20px #e91e63, 0 0 30px #e91e63, 0 0 40px #e91e63, 0 0 55px #e91e63, 0 0 75px #e91e63;
+    }
+  }
+
+  .scrollable {
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: var(--scrollbar-thumb-color) var(--scrollbar-track-color);
+    scroll-behavior: smooth;
+    scroll-margin-bottom: auto; /* Automatically scroll to the bottom */
+  }
+  
+  .scrollable::-webkit-scrollbar {
+    width: 6px;
+  }
+  
+  .scrollable::-webkit-scrollbar-thumb {
+    background-color: var(--scrollbar-thumb-color);
+    border-radius: 3px;
+  }
+  
+  .scrollable::-webkit-scrollbar-track {
+    background-color: var(--scrollbar-track-color);
+  }
+  
+  
+  
+  
